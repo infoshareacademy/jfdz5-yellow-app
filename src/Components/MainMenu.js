@@ -23,11 +23,6 @@ const ButtonMenu = {
     borderRadius: '40px'
 };
 
-const ButtonMenuSignUp = {
-    margin: '5px',
-    borderRadius: '40px'
-};
-
 
 const MainMenu = () => (
    //noinspection JSAnnotator

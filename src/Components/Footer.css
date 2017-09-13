@@ -22,3 +22,12 @@
     font-weight: 900;
     text-align: left;
     }
+
+@media screen and (max-width: 405px) {
+    .footer h6  {
+        font-size: 0.7em;
+    }
+    .social {
+        font-size: 0.7em;
+    }
+}

@@ -3,17 +3,14 @@ import './App.css';
 
 
 import MainMenu from './MainMenu'
-import SearchBar from './SearchBar'
+import Content from './Content'
 import Footer from './Footer'
 
 
 const App = () => (
     <div>
         <MainMenu/>
-        <div>
-            <SearchBar/>
-            <h1>lista eventów</h1>
-        </div>
+        <Content/>
         <Footer/>
     </div>
 )
