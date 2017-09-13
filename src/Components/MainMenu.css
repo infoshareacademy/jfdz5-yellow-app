@@ -1,0 +1,23 @@
+.navbar-default {
+    background-color: #f8f8f8;
+    color: #065498;
+    box-shadow: 2px 5px 15px 5px rgba(69, 122, 201, 0.4);
+    border-color: #f8f8f8;
+    border-radius: 0px;
+    font-size: 18px;
+    border-bottom: solid 1px #457ac9;
+    padding-left: 0;
+    }
+
+.navbar {
+    margin-bottom: 0px;
+
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.btn-info:focus {
+    outline: none;
+}
