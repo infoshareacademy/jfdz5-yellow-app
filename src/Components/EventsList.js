@@ -2,18 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Table } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
+import './EventsList.css'
 
 const EventsList = props => (
-    <Table striped bordered condensed hover>
+    <Table className="eventslist">
         <thead>
         <tr>
             <th>Data</th>
             <th>Nazwa</th>
             <th>Miejsce</th>
-            <th>Ulubione</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
+
         {
             props.events.map(
                 event => (
@@ -21,13 +23,13 @@ const EventsList = props => (
                         <td>
                             <Link to={`/events/${event.id}`}>
                                 {
-                                    event.name
+                                    event.data
                                 }
                             </Link>
                         </td>
                         <td>
                             {
-                                event.date
+                                event.name
                             }
                         </td>
                         <td>
@@ -36,7 +38,8 @@ const EventsList = props => (
                             }
                         </td>
                         <td>
-                         <FontAwesome className="fa fa-heart-o" />
+                            <span className="favs"><FontAwesome className="fa fa-heart-o" /></span>
+                            <span className="favs"><FontAwesome className="fa fa-facebook"/></span>
                         </td>
                     </tr>
                 )

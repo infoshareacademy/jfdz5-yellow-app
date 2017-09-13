@@ -10,10 +10,10 @@ export default class Footer extends React.Component {
             <div>
                 <footer className="footer">
 
-                    <Col xs={6} md={2}>
+                    <Col xs={6} md={3}>
                         <h6>2017 © Grupa Yellow</h6>
                     </Col>
-                    <Col xs={6} md={10}>
+                    <Col xs={6} md={9}>
                         <span className="social">
                             <FontAwesome className="fa fa-facebook fa-2x"/>
                             </span>

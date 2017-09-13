@@ -1,0 +1,26 @@
+.eventsview {
+    margin-top: 1em;
+    box-shadow: 2px 5px 15px 5px rgba(69, 122, 201, 0.4);
+    padding: 10px;
+}
+
+.eventsview h1 {
+    margin: 0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: #065498;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.importedevents {
+    margin: 0.5em;
+}
+
+@media screen and (max-width: 405px) {
+    .eventsview h1  {
+        font-size: 1em;
+    }
+}
