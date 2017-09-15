@@ -40,6 +40,8 @@ const EventsList = props => (
                             }
                         </td>
                         <td>
+                            <span className="favs"><FontAwesome className="fa fa-info" /></span>
+                            &nbsp;|&nbsp;
                             <span className="favs"><FontAwesome className="fa fa-heart-o" /></span>
                             &nbsp;|&nbsp;
                             <span className="favs"><FontAwesome className="fa fa-facebook"/></span>

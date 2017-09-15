@@ -20,6 +20,8 @@
     margin: 0.5em;
 }
 
+
+
 @media screen and (max-width: 405px) {
     .eventsview > h1  {
         font-size: 1em;
