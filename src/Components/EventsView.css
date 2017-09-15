@@ -5,7 +5,7 @@
 
 }
 
-.eventsview h1 {
+.eventsview > h1 {
     margin: 0;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -21,7 +21,7 @@
 }
 
 @media screen and (max-width: 405px) {
-    .eventsview h1  {
+    .eventsview > h1  {
         font-size: 1em;
     }
 }

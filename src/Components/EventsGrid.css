@@ -17,15 +17,30 @@
     border: 1px solid #49b8da;
     border-radius: 10px;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 
-.eventsgrid_cell h2 {
+.eventsgrid_cell > h1 {
+    margin-top: 0;
+    font-size: 1.5em;
+    font-weight: 800;
+    text-align: right;
+}
+
+.eventsgrid_cell > h2 {
    font-size: 1.5em;
     font-weight: 800;
 }
 
-.eventsgrid_cell h3 {
+.eventsgrid_cell > h3 {
     font-size: 1.2em;
     font-weight: 800;
+}
+
+.eventsgrid_cell .social {
+    color: #065498;
+    font-size: 1.2em;
+    font-weight: 800;
+    float: right;
+    padding: 0;
 }

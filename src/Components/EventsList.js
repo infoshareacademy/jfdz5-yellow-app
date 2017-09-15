@@ -30,7 +30,7 @@ const EventsList = props => (
                         <td>
                             {
                                 event.data
-                            } | {
+                            }&nbsp;|&nbsp;{
                                 event.time
                         }
                         </td>
@@ -41,6 +41,7 @@ const EventsList = props => (
                         </td>
                         <td>
                             <span className="favs"><FontAwesome className="fa fa-heart-o" /></span>
+                            &nbsp;|&nbsp;
                             <span className="favs"><FontAwesome className="fa fa-facebook"/></span>
                         </td>
                     </tr>
