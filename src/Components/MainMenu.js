@@ -13,6 +13,11 @@ import {
 import FontAwesome from 'react-fontawesome'
 
 
+const rightMenu = {
+    float: 'right',
+    marginRight: '10%'
+}
+
 const menuLogo = {
     margin: '0',
     maxHeight: '50px'
@@ -35,7 +40,7 @@ const MainMenu = () => (
                 <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
-                <Nav pullRight>
+                <Nav style={rightMenu}>
                     <Link to="/calendar">
                         <Button style={ButtonMenu} bsStyle="info">
                        <FontAwesome className="fa fa-calendar"/>

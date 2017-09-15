@@ -8,9 +8,9 @@ const EventsList = props => (
     <Table className="eventslist">
         <thead>
         <tr>
-            <th>Data</th>
-            <th>Nazwa</th>
-            <th>Miejsce</th>
+            <th>co</th>
+            <th>kiedy</th>
+            <th>gdzie</th>
             <th></th>
         </tr>
         </thead>
@@ -23,14 +23,16 @@ const EventsList = props => (
                         <td>
                             <Link to={`/events/${event.id}`}>
                                 {
-                                    event.data
+                                    event.name
                                 }
                             </Link>
                         </td>
                         <td>
                             {
-                                event.name
-                            }
+                                event.data
+                            } | {
+                                event.time
+                        }
                         </td>
                         <td>
                             {

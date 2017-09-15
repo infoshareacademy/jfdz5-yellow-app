@@ -1,7 +1,8 @@
 .eventsview {
-    margin-top: 1em;
+    margin: 1em 10% 0 10%;
     box-shadow: 2px 5px 15px 5px rgba(69, 122, 201, 0.4);
     padding: 10px;
+
 }
 
 .eventsview h1 {

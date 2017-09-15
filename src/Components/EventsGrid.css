@@ -1,0 +1,31 @@
+
+.eventsgrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    color: #065498;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.eventsgrid_cell {
+    min-height: 100px;
+    flex: calc(80% / 3);
+    flex-basis: auto;
+    text-align: left;
+    border: 1px solid #49b8da;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.eventsgrid_cell h2 {
+   font-size: 1.5em;
+    font-weight: 800;
+}
+
+.eventsgrid_cell h3 {
+    font-size: 1.2em;
+    font-weight: 800;
+}
