@@ -51,7 +51,7 @@ const MainMenu = () => (
                             <FontAwesome className="fa fa-heart"/>
                         </Button>
                     </Link>
-                    <Link to={'/signIn'}>
+                    <Link to={'/logOut'}>
                         <Button style={ButtonMenu} bsStyle="info">
                             <FontAwesome className="fa fa-sign-out"/>
                         </Button>

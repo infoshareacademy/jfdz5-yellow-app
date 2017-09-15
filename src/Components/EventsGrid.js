@@ -1,9 +1,9 @@
 import React from 'react'
-import { Thumbnail, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import FontAwesome from 'react-fontawesome'
 import './EventsGrid.css'
 
-const EventsGrid = props => (
+const EventsGrid = (props) => (
     <div className="eventsgrid">
         {
             props.events.map(
@@ -13,7 +13,7 @@ const EventsGrid = props => (
                         <h3>{event.data}&nbsp;|&nbsp;{event.time}</h3>
                         <h3>{event.place}</h3>
                         <span className="social">
-                        <FontAwesome className="fa fa-info" />
+                            <FontAwesome className="fa fa-info" />
                             &nbsp;|&nbsp;
                             <FontAwesome className="fa fa-heart-o" />
                             &nbsp;|&nbsp;

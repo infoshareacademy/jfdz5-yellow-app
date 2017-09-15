@@ -12,6 +12,7 @@ import { connect } from 'react-redux'
 import SearchBar from './SearchBar'
 import EventDetail from './EventDetail'
 import EventsView from './EventsView'
+import FavEventsView from './FavEventsView'
 
 const Content = () => (
     <Grid>
@@ -21,6 +22,8 @@ const Content = () => (
                <Switch>
                <Route exact path="/events" component={EventsView}/>
                <Route path="/events/:eventId" component={EventDetail}/>
+                   <Route path="/calendar" component={EventsView}/>
+                   <Route path="/favs" component={FavEventsView}/>
                </Switch>
            </EventsView>
        </div>
