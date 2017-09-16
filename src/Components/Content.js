@@ -18,14 +18,12 @@ const Content = () => (
     <Grid>
        <div>
            <SearchBar/>
-           <EventsView>
                <Switch>
                <Route exact path="/events" component={EventsView}/>
                <Route path="/events/:eventId" component={EventDetail}/>
                    <Route path="/calendar" component={EventsView}/>
                    <Route path="/favs" component={FavEventsView}/>
                </Switch>
-           </EventsView>
        </div>
     </Grid>
 )

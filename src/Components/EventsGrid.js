@@ -13,7 +13,9 @@ const EventsGrid = (props) => (
                         <h3>{event.data}&nbsp;|&nbsp;{event.time}</h3>
                         <h3>{event.place}</h3>
                         <span className="social">
-                            <FontAwesome className="fa fa-info" />
+                            <Link to={`/events/${event.id}`}>
+                            <span className="favs"><FontAwesome className="fa fa-info" /></span>
+                            </Link>
                             &nbsp;|&nbsp;
                             <FontAwesome className="fa fa-heart-o" />
                             &nbsp;|&nbsp;

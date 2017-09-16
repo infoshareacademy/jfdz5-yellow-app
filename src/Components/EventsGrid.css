@@ -25,6 +25,7 @@
     font-size: 1.5em;
     font-weight: 800;
     text-align: right;
+    text-transform: uppercase;
 }
 
 .eventsgrid_cell > h2 {

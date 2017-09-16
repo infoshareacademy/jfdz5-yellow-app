@@ -21,26 +21,20 @@ const EventsList = props => (
                 event => (
                     <tr key={event.id}>
                         <td>
+                            {event.name}
+                        </td>
+                        <td>
+                            {event.data}
+                            &nbsp;|&nbsp;
+                            {event.time}
+                        </td>
+                        <td>
+                            {event.place}
+                        </td>
+                        <td>
                             <Link to={`/events/${event.id}`}>
-                                {
-                                    event.name
-                                }
-                            </Link>
-                        </td>
-                        <td>
-                            {
-                                event.data
-                            }&nbsp;|&nbsp;{
-                                event.time
-                        }
-                        </td>
-                        <td>
-                            {
-                                event.place
-                            }
-                        </td>
-                        <td>
                             <span className="favs"><FontAwesome className="fa fa-info" /></span>
+                            </Link>
                             &nbsp;|&nbsp;
                             <span className="favs"><FontAwesome className="fa fa-heart-o" /></span>
                             &nbsp;|&nbsp;

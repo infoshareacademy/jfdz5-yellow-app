@@ -9,6 +9,12 @@ import EventsGrid from './EventsGrid'
 import FontAwesome from 'react-fontawesome'
 import './EventsView.css'
 
+
+const toggleView = {
+    margin: '5px',
+    borderRadius: '40px'
+}
+
 class FavEventsView extends React.Component {
     state = {
         showGrid: false
