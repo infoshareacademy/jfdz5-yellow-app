@@ -1,26 +1,24 @@
 import React from 'react'
 
 
-import events from '../data/events.json'
+
 
 import FontAwesome from 'react-fontawesome'
 import './EventDetail.css'
 
-const EventId={
+
+const EventId = {
     display: 'none'
 }
 
 
-const EventDetail = props => {
-    const eventId = parseInt(props.match.params.eventId, 10)
-    const event = events.find(
-        event => event.id === eventId
-)
+const EventDetail = ({ event }) => {
+
     return (
+
         <div className="eventdetail">
-            <span style={EventId}>{eventId}</span>
             <span className="social">
-                <FontAwesome className="fa fa-heart-o" />
+                <FontAwesome className="fa fa-heart-o"/>
                 &nbsp;|&nbsp;
                 <FontAwesome className="fa fa-facebook"/>
             </span>
@@ -30,9 +28,9 @@ const EventDetail = props => {
             <hr/>
             <div>more info......</div>
         </div>
+
     )
 }
-
 
 
 export default EventDetail

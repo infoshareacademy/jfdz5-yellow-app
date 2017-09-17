@@ -7,7 +7,7 @@ import {
 import {
     Grid
 } from 'react-bootstrap'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 import SearchBar from './SearchBar'
 import EventDetail from './EventDetail'
@@ -16,18 +16,17 @@ import FavEventsView from './FavEventsView'
 
 const Content = () => (
     <Grid>
-       <div>
-           <SearchBar/>
-               <Switch>
-               <Route exact path="/events" component={EventsView}/>
-               <Route path="/events/:eventId" component={EventDetail}/>
-                   <Route path="/calendar" component={EventsView}/>
-                   <Route path="/favs" component={FavEventsView}/>
-               </Switch>
-       </div>
+        <div>
+            <SearchBar/>
+            <Switch>
+                <Route exact path="/events" component={EventsView}/>
+                <Route path="/events/:eventId" component={EventDetail}/>
+                <Route path="/calendar" component={EventsView}/>
+                <Route path="/favs" component={FavEventsView}/>
+            </Switch>
+        </div>
     </Grid>
 )
-
 
 
 export default Content

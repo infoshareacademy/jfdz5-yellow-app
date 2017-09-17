@@ -33,6 +33,8 @@ class EventsView extends React.Component {
         showGrid: !this.state.showGrid
     })
 
+
+
     render() {
         console.log(events)
         return (
@@ -41,6 +43,9 @@ class EventsView extends React.Component {
                 <div>
                     <h2>go!&nbsp;&nbsp;<FontAwesome className="fa fa-arrow-right"/>
                         &nbsp;&nbsp;
+                        <Button style={buttonView} bsStyle="info">
+                            ALL
+                        </Button>
                     <Button style={buttonView} bsStyle="info">
                         <FontAwesome className="fa fa-music"/>
                     </Button>
