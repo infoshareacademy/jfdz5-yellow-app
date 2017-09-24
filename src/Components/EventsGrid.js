@@ -4,16 +4,30 @@ import FontAwesome from 'react-fontawesome'
 import './EventsGrid.css'
 import EventGridItem from './EventGridItem'
 
-const EventsGrid = (props) => (
-    <div className="eventsgrid">
+class EventsGrid extends React.Component {
+
+  render() {
+
+    const filteredData = this.props.events.filter(event => {
+      return new Date(event.data + ' ' + event.time) >= new Date();
+    })
+
+    const sortData = filteredData.sort((a, b) => {
+        return (new Date(a.data + ' ' + a.time)).getTime() > (new Date(b.data + ' ' + b.time)).getTime()
+      }
+    )
+    return (
+      <div className="eventsgrid">
         {
-            props.events.map(
-                event => (
-                    <EventGridItem key={event.id} event={event}/>
-                )
+          sortData.map(
+            event => (
+              <EventGridItem key={event.id} event={event}/>
             )
+          )
         }
-    </div>
-)
+      </div>
+    )
+  }
+}
 
 export default EventsGrid
