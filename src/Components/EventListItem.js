@@ -30,6 +30,9 @@ class EventListItem extends React.Component {
 
     close = () => this.setState({showDetails: false})
 
+
+
+
     render() {
         const event = this.props.event
         return (
