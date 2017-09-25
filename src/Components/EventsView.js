@@ -36,7 +36,7 @@ class EventsView extends React.Component {
 
 
     render() {
-        console.log(events)
+
         return (
             <div className="eventsview">
                 <h1>najbliższe imprezy</h1>

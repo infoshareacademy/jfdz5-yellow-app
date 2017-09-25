@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import firebase from 'firebase'
 
 import './MainMenu.css'
 import LogoImg from './img/logo.png'
@@ -51,11 +52,9 @@ const MainMenu = () => (
                             <FontAwesome className="fa fa-heart"/>
                         </Button>
                     </Link>
-                    <Link to={'/logOut'}>
-                        <Button style={ButtonMenu} bsStyle="info">
+                        <Button onClick={() => firebase.auth().signOut()} style={ButtonMenu} bsStyle="info">
                             <FontAwesome className="fa fa-sign-out"/>
                         </Button>
-                    </Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

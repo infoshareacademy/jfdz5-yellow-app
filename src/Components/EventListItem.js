@@ -3,6 +3,8 @@ import FontAwesome from 'react-fontawesome'
 import {Button, Modal} from 'react-bootstrap'
 import EventDetail from "./EventDetail";
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+import firebase from 'firebase'
 
 
 const closeButton = {
@@ -57,7 +59,7 @@ class EventListItem extends React.Component {
                     </Modal>
 
                     <Span className="favs" onClick={this.handleOpenClick}>
-                        <FontAwesome className="fa fa-info"/></Span>
+                          <FontAwesome className="fa fa-info"/></Span>
                     &nbsp;|&nbsp;
                     <span className="favs"><FontAwesome className="fa fa-heart-o"/></span>
                     &nbsp;|&nbsp;
@@ -68,4 +70,8 @@ class EventListItem extends React.Component {
     }
 }
 
-export default EventListItem
+export default connect(
+    state => ({
+        favEvents: state.favs.events
+    })
+)(EventListItem)

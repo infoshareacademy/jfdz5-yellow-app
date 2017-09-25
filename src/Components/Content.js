@@ -28,5 +28,6 @@ const Content = () => (
     </Grid>
 )
 
-
-export default Content
+const ConnectedContent = connect(
+)(Content)
+export default withRouter(ConnectedContent)
