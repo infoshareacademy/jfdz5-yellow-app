@@ -6,32 +6,32 @@ import firebase from 'firebase'
 import FontAwesome from 'react-fontawesome'
 import './EventDetail.css'
 
-import events from '../data/events.json'
 
-const EventId = {
-    display: 'none'
-}
+
+
+
 
 
 const EventDetail = props => {
-    const eventId = parseInt(props.match.params.eventId, 10)
-    const event = events.find(
-        event => event.id === eventId
-    )
+    const eventId = props.event.id
+    const event = props.event
+
 
         return (
 
             <div className="eventdetail">
             <span className="social">
-                   <button
-                       active={!!props.favEvents[eventId]}
-                       onClick={
-                           () => firebase.database().ref(
-                               '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
-                           ).set(props.favEvents[eventId] ? null : true)
-                       }
-                   >Toggle fav</button>
-                <FontAwesome className="fa fa-heart-o"/>
+                    <button
+                        active={!!props.favEvents[eventId]}
+                        onClick={
+                            () => firebase.database().ref(
+                                '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
+                            ).set(props.favEvents[eventId] ? null : event)
+                        }
+                    >Toggle fav</button>
+
+                      {/*<FontAwesome className="fa fa-heart-o"/></button>*/}
+
                 &nbsp;|&nbsp;
                 <FontAwesome className="fa fa-facebook"/>
             </span>
@@ -47,9 +47,10 @@ const EventDetail = props => {
 
 
 
+
 export default connect(
     state => ({
-    favEvents: state.favs.events
- })
+        favEvents: state.favs.events
+    })
 )(EventDetail)
 

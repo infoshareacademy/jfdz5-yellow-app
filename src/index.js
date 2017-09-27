@@ -12,17 +12,20 @@ import "bootstrap/dist/css/bootstrap-theme.css";
 import Auth from './Components/Auth'
 import App from "./Components/App";
 
+
 import "react-fontawesome";
 
 
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(
-    <Provider store={store}>
+
+ReactDOM.render(<Provider store={store}>
         <Router>
+
             <Auth>
               <App/>
             </Auth>
+
         </Router>
     </Provider>,
     document.getElementById('root')

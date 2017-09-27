@@ -4,7 +4,7 @@ import firebase from 'firebase'
 
 import './MainMenu.css'
 import LogoImg from './img/logo.png'
-import { LinkContainer } from 'react-router-bootstrap'
+
 import {
     Navbar,
     Nav,

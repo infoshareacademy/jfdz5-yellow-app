@@ -35,14 +35,18 @@ const store = createStore(
     enhancer
 )
 
+firebase.auth().signInWithEmailAndPassword(
+    'katarzyna.sitarz@gmail.com',
+    'test123'
+    )
+
 firebase.auth().onAuthStateChanged(user => {
     store.dispatch(setUser(user))
 
-    if (user !== null) {
+    if (user !==null) {
         const userId = firebase.auth().currentUser.uid
 
 
-        firebase.database().ref('/favorites/' + userId).set({a: 10, b: 20})
         firebase.database().ref('/favorites/' + userId).on('value', snapshot => {
             store.dispatch(setFavs(snapshot.val()))
         })
