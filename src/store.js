@@ -48,7 +48,7 @@ firebase.auth().onAuthStateChanged(user => {
 
 
         firebase.database().ref('/favorites/' + userId).on('value', snapshot => {
-            store.dispatch(setFavs(snapshot.val()))
+            store.dispatch(setFavs(snapshot.val() || []))
         })
     }
 })

@@ -66,15 +66,20 @@ class EventListItem extends React.Component {
                         <Span className="favs" onClick={this.handleOpenClick}>
                           <FontAwesome className="fa fa-info"/></Span>
                         &nbsp;|&nbsp;
-                        <span className="favs"><FontAwesome className="fa fa-heart-o"/>
-                     <button
+                        <Span className="favs"
+
                          active={!!this.props.favEvents[eventId]}
                          onClick={
                              () => firebase.database().ref(
                                  '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
                              ).set(this.props.favEvents[eventId] ? null : event)
                          }
-                     >Toggle fav</button></span>
+                     >                            {this.props.favEvents[eventId] ?
+                                <FontAwesome className="fa fa-heart"/> :
+                                <FontAwesome className="fa fa-heart-o"/>
+                            }
+
+                        </Span>
                         &nbsp;|&nbsp;
                         <span className="favs"><FontAwesome className="fa fa-facebook"/></span>
                     </td>

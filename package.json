@@ -17,6 +17,7 @@
     "react-scripts": "1.0.10",
     "react-skylight": "^0.4.2",
     "redux": "^3.7.2",
+    "redux-localstorage": "^0.4.1",
     "redux-thunk": "^2.1.0",
     "styled-components": "^2.1.2"
   },

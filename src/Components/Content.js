@@ -22,7 +22,7 @@ const Content = () => (
                 <Route exact path="/events" component={EventsView}/>
                 <Route path="/events/:eventId" component={EventDetail}/>
                 <Route path="/calendar" component={EventsView}/>
-                <Route path="/favs" component={FavEventsView}/>
+                <Route path="/favorites" component={FavEventsView}/>
             </Switch>
         </div>
     </Grid>
