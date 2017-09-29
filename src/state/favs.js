@@ -5,6 +5,9 @@ type: SET_FAVS,
 favs
 })
 
+
+
+
     const initialState = {
     events: []
 }

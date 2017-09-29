@@ -42,12 +42,17 @@ const MainMenu = () => (
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav style={rightMenu}>
+                    <Link to="/messages">
+                        <Button style={ButtonMenu} bsStyle="info">
+                            ms
+                        </Button>
+                    </Link>
                     <Link to="/calendar">
                         <Button style={ButtonMenu} bsStyle="info">
                        <FontAwesome className="fa fa-calendar"/>
                         </Button>
                     </Link>
-                    <Link to="/favs">
+                    <Link to="/favorites">
                         <Button style={ButtonMenu} bsStyle="info">
                             <FontAwesome className="fa fa-heart"/>
                         </Button>
