@@ -41,34 +41,34 @@ class EventsView extends React.Component {
             <div className="eventsview">
                 <h1>najbliższe imprezy</h1>
                 <div>
-                    <h2>go!&nbsp;&nbsp;<FontAwesome className="fa fa-arrow-right"/>
+                    <h2>go!&nbsp;&nbsp;<FontAwesome name="arrow-right"/>
                         &nbsp;&nbsp;
                         <Button style={buttonView} bsStyle="info">
                             ALL
                         </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-music"/>
+                        <FontAwesome name="music"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-film"/>
+                        <FontAwesome name="film"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-coffee"/>
+                        <FontAwesome name="coffee"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-cutlery"/>
+                        <FontAwesome name="cutlery"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-glass"/>
+                        <FontAwesome name="glass"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-futbol-o"/>
+                        <FontAwesome name="futbol-o"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-gamepad"/>
+                        <FontAwesome name="gamepad"/>
                     </Button>
                     <Button style={buttonView} bsStyle="info">
-                        <FontAwesome className="fa fa-university"/>
+                        <FontAwesome name="university"/>
                     </Button>
                     </h2>
                 </div>
@@ -76,9 +76,9 @@ class EventsView extends React.Component {
                     <Button style={toggleView} bsStyle="info"
                     onClick={this.handleGridToggleClick}
                     active={this.state.showGrid}>
-                        {this.state.showGrid ? <FontAwesome className="fa fa-list"/>
+                        {this.state.showGrid ? <FontAwesome name="list"/>
                             :
-                            <FontAwesome className="fa fa-table"/>}
+                            <FontAwesome name="table"/>}
                     </Button>
                     {
                         this.state.showGrid ?

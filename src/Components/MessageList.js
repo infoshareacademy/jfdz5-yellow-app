@@ -31,9 +31,9 @@ class MessageList extends Component {
     }
 
     render() {
-        let messageNodes = this.state.messages.map((message) => {
+        let messageNodes = this.state.messages.map((message, index) => {
             return (
-                <div className="card">
+                <div key={index} className="card">
                     <div className="card-content">
                         <Message message = {message.message} />
                     </div>

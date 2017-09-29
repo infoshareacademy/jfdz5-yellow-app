@@ -1,7 +1,11 @@
 import React from 'react'
 import firebase from 'firebase'
 
-import { Button, FormGroup, FormControl } from "react-bootstrap"
+import {
+    Button,
+    // FormGroup,
+    // FormControl
+} from "react-bootstrap"
 
 import './LogInForm.css'
 import FontAwesome from 'react-fontawesome'
@@ -33,7 +37,7 @@ const ButtonForm = {
             render() {
               return (
                   <form onSubmit={this.handleSubmit} className="loginform">
-                      <h1><FontAwesome className="fa fa-sign-in fa-2x" />
+                      <h1><FontAwesome name="sign-in" />
                           logowanie</h1>
                       <div>
                           <label htmlFor="email">Email</label>
@@ -60,7 +64,7 @@ const ButtonForm = {
                       <div>
                           <Button type="submit" style={ButtonForm} bsStyle="info">
                               OK&nbsp;&nbsp;&nbsp;
-                              <FontAwesome className="fa fa-check-square-o" />
+                              <FontAwesome name="check-square" />
                           </Button>
                       </div>
                   </form>

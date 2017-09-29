@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 import firebase from 'firebase'
 
 import './MainMenu.css'
@@ -31,35 +32,42 @@ const ButtonMenu = {
 
 
 const MainMenu = () => (
-   //noinspection JSAnnotator
-<div>
+    <div>
         <Navbar fixedTop>
             <Navbar.Header>
                 <Navbar.Brand>
                     <Link to="/"><img src={LogoImg} style={menuLogo} alt="logo"/></Link>
                 </Navbar.Brand>
-                <Navbar.Toggle />
+                <Navbar.Toggle/>
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav style={rightMenu}>
-                    <Link to="/messages">
-                        <Button style={ButtonMenu} bsStyle="info">
-                            ms
-                        </Button>
-                    </Link>
-                    <Link to="/calendar">
-                        <Button style={ButtonMenu} bsStyle="info">
-                       <FontAwesome className="fa fa-calendar"/>
-                        </Button>
-                    </Link>
-                    <Link to="/favorites">
-                        <Button style={ButtonMenu} bsStyle="info">
-                            <FontAwesome className="fa fa-heart"/>
-                        </Button>
-                    </Link>
+                    <LinkContainer to="/messages">
+                        <NavItem>
+                            <Button style={ButtonMenu} bsStyle="info">
+                                ms
+                            </Button>
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to="/calendar">
+                        <NavItem>
+                            <Button style={ButtonMenu} bsStyle="info">
+                                <FontAwesome name="calendar"/>
+                            </Button>
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to="/favorites">
+                        <NavItem>
+                            <Button style={ButtonMenu} bsStyle="info">
+                                <FontAwesome name="heart"/>
+                            </Button>
+                        </NavItem>
+                    </LinkContainer>
+                    <NavItem>
                         <Button onClick={() => firebase.auth().signOut()} style={ButtonMenu} bsStyle="info">
-                            <FontAwesome className="fa fa-sign-out"/>
+                            <FontAwesome name="sign-out"/>
                         </Button>
+                    </NavItem>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

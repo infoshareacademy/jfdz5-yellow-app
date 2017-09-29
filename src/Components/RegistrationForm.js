@@ -10,7 +10,6 @@ const ButtonForm = {
     margin: '5px',
 };
 
-
 class RegistrationForm extends React.Component {
 
     state = {
@@ -34,7 +33,7 @@ class RegistrationForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}className="registrationform">
-                <h1><FontAwesome className="fa fa-user-plus fa-2x" />
+                <h1><FontAwesome name="user-plus" />
                     nowe konto</h1>
 
                 <div>
@@ -62,7 +61,7 @@ class RegistrationForm extends React.Component {
                 <div>
                     <Button type="submit" style={ButtonForm} bsStyle="info">
                         OK&nbsp;&nbsp;&nbsp;
-                        <FontAwesome className="fa fa-check-square-o" />
+                        <FontAwesome name="check-square-o" />
                     </Button>
 
                 </div>

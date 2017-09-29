@@ -1,6 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import persistState from 'redux-localstorage'
+// import persistState from 'redux-localstorage'
 import firebase from 'firebase'
 
 import auth, { setUser } from './state/auth'
@@ -16,18 +16,16 @@ const config = {
 };
 firebase.initializeApp(config);
 
-
 const reducer = combineReducers({
     auth,
     favs
 })
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const enhancer = composeEnhancers(
     applyMiddleware(thunk),
-    persistState([]),
+    // persistState([]),
 )
 
 const store = createStore(
@@ -38,18 +36,17 @@ const store = createStore(
 firebase.auth().signInWithEmailAndPassword(
     'katarzyna.sitarz@gmail.com',
     'test123'
-    )
+)
 
 firebase.auth().onAuthStateChanged(user => {
     store.dispatch(setUser(user))
 
-    if (user !==null) {
+    if (user !== null) {
         const userId = firebase.auth().currentUser.uid
-
 
         firebase.database().ref('/favorites/' + userId).on('value', snapshot => {
             store.dispatch(setFavs(snapshot.val() || []));
-            console.log(snapshot.val)
+            // console.log(snapshot.val)
         })
     }
 })

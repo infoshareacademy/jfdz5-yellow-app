@@ -3,11 +3,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 
-
-
 class FavEventListItem extends React.Component {
 
-    render(){
+    render() {
 
         const eventId = this.props.event.id
         const event = this.props.event
