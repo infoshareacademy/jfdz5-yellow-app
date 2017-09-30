@@ -1,0 +1,43 @@
+.registrationform {
+    margin: 1em 10% 0 10%;
+    border: 1px solid #49b8da;
+    border-radius: 10px;
+    padding: 10px;
+    color: #065498;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.registrationform h1 {
+    margin: 5px 0 5px 0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 1.7em;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.registrationform .signup {
+    margin: 4px;
+    letter-spacing: 0.3em;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #49b8da;
+    color: #49b8da;
+    width: 75%;
+}
+
+.registrationform label {
+    margin: 2px;
+}
+
+.registrationform .signup:focus {
+    border-color: #49b8da;
+    box-shadow: 0px 1px 2px #49b8da;
+    outline: none;
+}
+
+.btn-info:focus {
+    outline: none;
+}

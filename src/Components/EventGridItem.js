@@ -3,6 +3,8 @@ import FontAwesome from 'react-fontawesome'
 import {Button, Modal} from 'react-bootstrap'
 import EventDetail from "./EventDetail";
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+import firebase from 'firebase'
 
 
 const closeButton = {
@@ -31,7 +33,9 @@ class EventGridItem extends React.Component {
     close = () => this.setState({showDetails: false})
 
     render() {
+        const eventId = this.props.event.id
         const event = this.props.event
+
         return (
                                         <div className="eventsgrid_cell" key={event.id}>
                                 <h2>{event.name}</h2>
@@ -47,7 +51,20 @@ class EventGridItem extends React.Component {
                                             <Span className="favs" onClick={this.handleOpenClick}>
                         <FontAwesome className="fa fa-info"/></Span>
                                     &nbsp;|&nbsp;
-                                    <FontAwesome className="fa fa-heart-o" />
+                                            <Span className="favs"
+
+                                                  active={!!this.props.favEvents[eventId]}
+                                                  onClick={
+                                                      () => firebase.database().ref(
+                                                          '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
+                                                      ).set(this.props.favEvents[eventId] ? null : event)
+                                                  }
+                                            >                            {this.props.favEvents[eventId] ?
+                                                <FontAwesome className="fa fa-heart"/> :
+                                                <FontAwesome className="fa fa-heart-o"/>
+                                            }
+
+                        </Span>
                                     &nbsp;|&nbsp;
                                     <FontAwesome className="fa fa-facebook"/>
                                                     </div>
@@ -56,4 +73,8 @@ class EventGridItem extends React.Component {
 }
 }
 
-export default EventGridItem
+export default connect(
+    state => ({
+        favEvents: state.favs.events
+    })
+)(EventGridItem)

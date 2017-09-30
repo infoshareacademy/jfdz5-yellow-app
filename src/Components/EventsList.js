@@ -20,17 +20,17 @@ class EventsList extends React.Component {
 
     return (
       <Table className="eventslist">
-        <thead>
-        <tr>
-          <th>co</th>
-          <th>kiedy</th>
-          <th>gdzie</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
+            <thead>
+            <tr>
+                <th>co</th>
+                <th>kiedy</th>
+                <th>gdzie</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
 
-        {
+            {
           sortData.map(
             event => (
               <EventListItem key={event.id} event={event}/>
