@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import {
   Navbar,
@@ -34,7 +36,7 @@ const ButtonMenu = {
 };
 
 
-const MainMenu = () => (
+const MainMenu = ({user}) => (
 
 <div>
         <Navbar fixedTop>
@@ -42,6 +44,9 @@ const MainMenu = () => (
                 <Navbar.Brand>
                     <Link to="/"><img src={LogoImg} style={menuLogo} alt="logo"/></Link>
                 </Navbar.Brand>
+              <span className="username">
+                {user.email}
+              </span>
                 <Navbar.Toggle/>
             </Navbar.Header>
             <Navbar.Collapse>
@@ -78,4 +83,9 @@ const MainMenu = () => (
     </div>
 )
 
-export default MainMenu
+
+export default withRouter(connect(
+  state => ({
+    user: state.auth.user
+  })
+)(MainMenu))

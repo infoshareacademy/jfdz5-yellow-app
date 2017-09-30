@@ -27,7 +27,6 @@ class RegistrationForm extends React.Component {
     event.preventDefault()
 
     firebase.auth().createUserWithEmailAndPassword(
-      this.state.username,
       this.state.email,
       this.state.password
     )

@@ -5,6 +5,7 @@ import firebase from 'firebase'
 
 import auth, { setUser } from './state/auth'
 import favs, { setFavs } from './state/favs'
+import searching from './state/searching'
 
 const config = {
     apiKey: "AIzaSyB-6uPDmcy0KQvME7-D8nZWZOX6sbG08j0",
@@ -19,7 +20,8 @@ firebase.initializeApp(config);
 
 const reducer = combineReducers({
     auth,
-    favs
+    favs,
+  searching
 })
 
 

@@ -14,6 +14,7 @@ import EventDetail from './EventDetail'
 import EventsView from './EventsView'
 import FavEventsView from './FavEventsView'
 import MessageView from './MessageView'
+import SearchResultsView from './SearchResultsView'
 
 const Content = () => (
     <Grid>
@@ -22,6 +23,7 @@ const Content = () => (
             <Switch>
                 <Route exact path="/events" component={EventsView}/>
                 <Route path="/events/:eventId" component={EventDetail}/>
+                <Route path="/results" component={SearchResultsView}/>
                 <Route path="/calendar" component={EventsView}/>
                 <Route path="/favorites" component={FavEventsView}/>
                 <Route path="/messages" component={MessageView}/>
