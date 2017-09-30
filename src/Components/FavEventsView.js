@@ -1,54 +1,59 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-
-import events from '../data/events.json'
-
-import EventsList from './EventsList'
-import EventsGrid from './EventsGrid'
-
+import React from 'react';
 import FontAwesome from 'react-fontawesome'
+import {Button, Modal} from 'react-bootstrap'
+import EventDetail from "./EventDetail";
+import styled from 'styled-components'
+import {connect} from 'react-redux'
+
+import './EventsList.css'
 import './EventsView.css'
 
-
-const toggleView = {
-    margin: '5px',
-    borderRadius: '40px'
-}
-
 class FavEventsView extends React.Component {
-    state = {
-        showGrid: false
-    }
 
-
-    handleGridToggleClick = () => this.setState({
-        showGrid: !this.state.showGrid
-    })
 
     render() {
+        const favorites = Object.entries(this.props.favEvents).map(([key, value]) => {
+            return (
+                <tr>
+                    <td key={key}>{value.name}</td>
+                    <td>
+                        {value.data}
+                        &nbsp;|&nbsp;
+                        {value.time}
+                    </td>
+                    <td>
+                        {value.place}
+                    </td>
+                    </tr>
+
+            )
+        })
         return (
             <div className="eventsview">
-                <h1>najbliższe imprezy</h1>
-                <div className="importedevents">
-                    <Button style={toggleView} bsStyle="info"
-                            onClick={this.handleGridToggleClick}
-                            active={this.state.showGrid}>
-                        {this.state.showGrid ? <FontAwesome className="fa fa-list"/>
-                            :
-                            <FontAwesome className="fa fa-table"/>}
-                    </Button>
-                    {
-                        this.state.showGrid ?
-                            <EventsGrid events={events}/>
-                            :
-                            <EventsList events={events}/>
-
-                    }
-                </div>
+                <h1>twoja lista wydarzeń</h1>
+                <table className="eventslist">
+                    <thead>
+                    <tr>
+                        <th>co</th>
+                        <th>kiedy</th>
+                        <th>gdzie</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {favorites}
+                    </tbody>
+                </table>
             </div>
         )
 
     }
-
 }
-export default FavEventsView
+
+export default connect(
+    state => ({
+        favEvents: state.favs.events
+    })
+)(FavEventsView)
+
+

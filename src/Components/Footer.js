@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import {Col} from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 
 
@@ -15,13 +15,13 @@ export default class Footer extends React.Component {
                     </Col>
                     <Col xs={6} md={9}>
                         <span className="social">
-                            <FontAwesome className="fa fa-facebook fa-2x"/>
+                            <FontAwesome name="facebook" size="2x"/>
                             </span>
                         <span className="social">
-                            <FontAwesome className="fa fa-instagram fa-2x"/>
+                            <FontAwesome name="instagram" size="2x"/>
                         </span>
                         <span className="social">
-                            <FontAwesome className="fa fa-envelope fa-2x"/>
+                            <FontAwesome name="envelope" size="2x"/>
                         </span>
                     </Col>
                     </footer>

@@ -1,6 +1,16 @@
 import React from 'react'
 import firebase from 'firebase'
 
+import { Button } from "react-bootstrap"
+
+import './RegistrationForm.css'
+import FontAwesome from 'react-fontawesome'
+
+const ButtonForm = {
+    margin: '5px',
+};
+
+
 class RegistrationForm extends React.Component {
 
     state = {
@@ -23,12 +33,15 @@ class RegistrationForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <h1>Create account</h1>
+            <form onSubmit={this.handleSubmit}className="registrationform">
+                <h1><FontAwesome name="user-plus" size="2x" />
+                    nowe konto</h1>
+
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">email</label>
                     <br/>
                     <input
+                        className="signup"
                         type="text"
                         id="email"
                         name="email"
@@ -36,19 +49,22 @@ class RegistrationForm extends React.Component {
                     />
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">hasło</label>
                     <br/>
                     <input
-                        type="text"
+                        className="signup"
+                        type="password"
                         id="password"
                         name="password"
                         onChange={this.handleChange}
                     />
                 </div>
                 <div>
-                    <button type="submit">
-                        Create account
-                    </button>
+                    <Button type="submit" style={ButtonForm} bsStyle="info">
+                        OK&nbsp;&nbsp;&nbsp;
+                        <FontAwesome name="check-square-o" />
+                    </Button>
+
                 </div>
             </form>
         )

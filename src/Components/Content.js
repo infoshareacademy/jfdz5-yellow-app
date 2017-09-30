@@ -2,12 +2,12 @@ import React from 'react'
 import {
     Switch,
     Route,
-    withRouter
+    // withRouter
 } from 'react-router-dom'
 import {
     Grid
 } from 'react-bootstrap'
-import {connect} from 'react-redux'
+// import { connect } from 'react-redux'
 
 import SearchBar from './SearchBar'
 import EventDetail from './EventDetail'
@@ -28,6 +28,8 @@ const Content = () => (
     </Grid>
 )
 
-const ConnectedContent = connect(
-)(Content)
-export default withRouter(ConnectedContent)
+// const ConnectedContent = connect(
+// )(Content)
+// export default withRouter(ConnectedContent)
+
+export default Content
