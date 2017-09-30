@@ -5,17 +5,17 @@ import EventDetail from "./EventDetail";
 import styled from 'styled-components'
 import {connect} from 'react-redux'
 
-import './EventsList.css'
-import './EventsView.css'
-
-class FavEventsView extends React.Component {
+import './FavEventsView.css'
 
 
-    render() {
-        const favorites = Object.entries(this.props.favEvents).map(([key, value]) => {
-            return (
-                <tr>
-                    <td key={key}>{value.name}</td>
+
+
+  class FavEventsView extends React.Component {
+  render() {
+    const favorites = Object.entries(this.props.favEvents).map(([key, value]) => {
+      return (
+        <tr>
+        <td key={key}>{value.name}</td>
                     <td>
                         {value.data}
                         &nbsp;|&nbsp;
@@ -25,13 +25,13 @@ class FavEventsView extends React.Component {
                         {value.place}
                     </td>
                     </tr>
-
             )
         })
         return (
-            <div className="eventsview">
-                <h1>twoja lista wydarzeń</h1>
-                <table className="eventslist">
+            <div className="faveventsview">
+                <h1>twoja lista&nbsp;&nbsp;<FontAwesome name="heart"/></h1>
+              <div className="favevents">
+                <table className="table faveventslist">
                     <thead>
                     <tr>
                         <th>co</th>
@@ -44,6 +44,7 @@ class FavEventsView extends React.Component {
                     {favorites}
                     </tbody>
                 </table>
+              </div>
             </div>
         )
 

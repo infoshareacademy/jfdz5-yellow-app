@@ -1,17 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
+import {
+  Navbar,
+  Nav,
+  NavItem,
+  Button
+} from 'react-bootstrap'
 import firebase from 'firebase'
 
 import './MainMenu.css'
 import LogoImg from './img/logo.png'
-import { LinkContainer } from 'react-router-bootstrap'
-import {
-    Navbar,
-    Nav,
-    NavItem,
-    Button
-} from 'react-bootstrap'
+
+
+
+
 import FontAwesome from 'react-fontawesome'
 
 
@@ -44,31 +47,31 @@ const MainMenu = () => (
             <Navbar.Collapse>
                 <Nav style={rightMenu}>
                     <LinkContainer to="/messages">
-                        <NavItem>
+<Nav>
                         <Button style={ButtonMenu} bsStyle="info">
                             ms
                         </Button>
-                        </NavItem>
+</Nav>
                     </LinkContainer>
                     <LinkContainer to="/calendar">
-                        <NavItem>
+                        <Nav>
                         <Button style={ButtonMenu} bsStyle="info">
                        <FontAwesome name="calendar"/>
                         </Button>
-                        </NavItem>
+                        </Nav>
                     </LinkContainer>
                     <LinkContainer to="/favorites">
-                        <NavItem>
+                        <Nav>
                         <Button style={ButtonMenu} bsStyle="info">
                             <FontAwesome name="heart"/>
                         </Button>
-                        </NavItem>
+                        </Nav>
                     </LinkContainer>
-                    <NavItem>
+                    <Nav>
                         <Button onClick={() => firebase.auth().signOut()} style={ButtonMenu} bsStyle="info">
                             <FontAwesome name="sign-out"/>
                         </Button>
-                    </NavItem>
+                    </Nav>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

@@ -1,0 +1,58 @@
+.favventslist {
+    color: #065498;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.faveventslist.table > tbody > tr > td {
+    border-top: 1px solid #49b8da;
+}
+
+.faveventslist.table > thead > tr > th {
+    border-bottom: 6px double #49b8da;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.faveventslist .favs {
+    padding: 0 0.2em 0 0.2em;
+    text-align: center;
+}
+
+.faveventsview {
+    margin: 1em 10% 0 10%;
+    box-shadow: 2px 5px 15px 5px rgba(69, 122, 201, 0.4);
+    padding: 10px;
+    color: #065498;
+    font-weight: 700;
+}
+
+.faveventsview > h1 {
+    margin: 0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.faveventsview h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.favevents {
+    margin: 0.5em;
+}
+
+@media screen and (max-width: 405px) {
+    .eventslist  {
+        font-size: 0.7em;
+    }
+}
