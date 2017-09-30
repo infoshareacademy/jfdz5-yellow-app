@@ -20,3 +20,10 @@
 .btn-info:focus {
     outline: none;
 }
+
+.username {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #065498;
+    margin: 0 5px 0 5px;
+}
