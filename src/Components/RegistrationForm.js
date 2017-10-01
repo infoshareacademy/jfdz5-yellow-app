@@ -36,11 +36,7 @@ class RegistrationForm extends React.Component {
       <form onSubmit={this.handleSubmit} className="registrationform">
         <h1><FontAwesome name="user-plus" size="2x"/>
           nowe konto</h1>
-        <div>
-          <label htmlFor="email">imię</label>
-          <br/>
-          </div>
-        <div>
+         <div>
           <label htmlFor="email">email</label>
           <br/>
           <input
