@@ -25,9 +25,12 @@ const ButtonForm = {
         event.preventDefault()
           firebase.auth().signInWithEmailAndPassword(
                 this.state.email,
-                this.state.password
-                 )
-      }
+                this.state.password)
+
+          }
+
+        //
+
 
 
             render() {

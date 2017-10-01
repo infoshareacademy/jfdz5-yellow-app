@@ -35,11 +35,6 @@ const store = createStore(
     enhancer
 )
 
-firebase.auth().signInWithEmailAndPassword(
-    'katarzyna.sitarz@gmail.com',
-    'test123'
-    )
-
 firebase.auth().onAuthStateChanged(user => {
     store.dispatch(setUser(user))
 
