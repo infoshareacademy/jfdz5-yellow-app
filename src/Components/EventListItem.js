@@ -77,7 +77,10 @@ class EventListItem extends React.Component {
 
                         </Span>
                         &nbsp;|&nbsp;
-                        <span className="favs"><FontAwesome name="facebook"/></span>
+                        <span className="favs"><a href={event.link}><FontAwesome name="facebook"/>
+
+
+                        </a></span>
                     </td>
                 </tr>
             )

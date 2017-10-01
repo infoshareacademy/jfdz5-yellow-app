@@ -41,6 +41,8 @@ class EventGridItem extends React.Component {
                                 <h2>{event.name}</h2>
                                 <h3>{event.data}&nbsp;|&nbsp;{event.time}</h3>
                                 <h3>{event.place}</h3>
+                                            <h4>{event.adres}</h4>
+                                            <h4>{event.tickets}</h4>
                                             <Modal show={this.state.showDetails} onHide={this.close}>
                                                 <Button onClick={this.close} style={closeButton} bsStyle="info">
                                                     <FontAwesome className="fa fa-times"/>
@@ -66,7 +68,7 @@ class EventGridItem extends React.Component {
 
                         </Span>
                                     &nbsp;|&nbsp;
-                                    <FontAwesome className="fa fa-facebook"/>
+                                            <a href={event.link}><FontAwesome className="fa fa-facebook"/></a>
                                                     </div>
                         )
 

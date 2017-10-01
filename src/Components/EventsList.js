@@ -5,11 +5,11 @@ import EventListItem from './EventListItem'
 
 
 
-class EventsList extends React.Component {
+const EventsList = props => {
 
-  render() {
 
-    const filteredData = this.props.events.filter(event => {
+
+    const filteredData = props.events.filter(event => {
       return new Date(event.data + ' ' + event.time) >= new Date();
     })
 
@@ -42,7 +42,7 @@ class EventsList extends React.Component {
     )
   }
 
-}
+
 
 
 

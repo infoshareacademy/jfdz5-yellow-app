@@ -11,7 +11,23 @@ import './FavEventsView.css'
 
 
   class FavEventsView extends React.Component {
+
+
+
+
+
   render() {
+
+      //
+      // const filteredData = this.props.events.filter(event => {
+      //     return new Date(event.data + ' ' + event.time) >= new Date();
+      // })
+      //
+      // const sortData = filteredData.sort((a, b) => {
+      //         return (new Date(a.data + ' ' + a.time)).getTime() > (new Date(b.data + ' ' + b.time)).getTime()
+      //     }
+      // )
+
     const favorites = Object.entries(this.props.favEvents).map(([key, value]) => {
       return (
         <tr>
