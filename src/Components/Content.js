@@ -18,7 +18,7 @@ import MessageView from './MessageView'
 const Content = () => (
     <Grid>
         <div>
-            <SearchBar/>
+
             <Switch>
                 <Route exact path="/events" component={EventsView}/>
                 <Route path="/events/:eventId" component={EventDetail}/>
