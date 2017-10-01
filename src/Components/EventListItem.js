@@ -69,10 +69,11 @@ class EventListItem extends React.Component {
 
                          active={!!this.props.favEvents[eventId]}
                          onClick={
-                             () => firebase.database().ref(
+                             () => {delete event.date
+                         firebase.database().ref(
                                  '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
                              ).set(this.props.favEvents[eventId] ? null : event)
-                         }
+                         }}
                      >                            {this.props.favEvents[eventId] ?
                                 <FontAwesome name="heart"/> :
                                 <FontAwesome name="heart-o"/>
@@ -80,12 +81,11 @@ class EventListItem extends React.Component {
 
                         </Span>
                         &nbsp;|&nbsp;
-                        <span className="favs"
-                              onClick={() => {event.link}}
-                        ><FontAwesome name="facebook"/>
-</span>
+                      <Span className="favs">
+                                          { event.link ? <a href={event.link}><FontAwesome className="fa fa-facebook"/></a> : null }
+                                          </Span>
                       <span style={EventId}>{event.genre}</span>
-                    </td>o si
+                    </td>
                 </tr>
             )
         }
