@@ -23,6 +23,9 @@ const menuLogo = {
 
     const Auth = ({ user, children }) => (
   <div>
+    <div className="header">
+    <h1>gdańsk pełny wrażeń</h1>
+    </div>
             {
           user === null ?
               <div style={Forms}>

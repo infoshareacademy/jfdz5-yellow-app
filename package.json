@@ -6,6 +6,7 @@
     "bootstrap": "^3.3.7",
     "firebase": "^4.4.0",
     "lodash": "^4.17.4",
+    "moment": "^2.18.1",
     "muicss": "^0.9.26",
     "react": "^15.6.2",
     "react-bootstrap": "^0.31.2",

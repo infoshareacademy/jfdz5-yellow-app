@@ -21,6 +21,10 @@ const Span = styled.span`
  color: #42B5D7;
  }`
 
+const EventId = {
+  display: 'none'
+}
+
 
 class EventGridItem extends React.Component {
 
@@ -43,6 +47,7 @@ class EventGridItem extends React.Component {
                                 <h3>{event.place}</h3>
                                             <h4>{event.adres}</h4>
                                             <h4>{event.tickets}</h4>
+                                          <span style={EventId}>{event.genre}</span>
                                             <Modal show={this.state.showDetails} onHide={this.close}>
                                                 <Button onClick={this.close} style={closeButton} bsStyle="info">
                                                     <FontAwesome className="fa fa-times"/>

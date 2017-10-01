@@ -8,6 +8,8 @@ import {
   Button
 } from 'react-bootstrap'
 import firebase from 'firebase'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 import './MainMenu.css'
 import LogoImg from './img/logo.png'
@@ -34,26 +36,23 @@ const ButtonMenu = {
 };
 
 
-const MainMenu = () => (
+const MainMenu = ({user}) => (
 
 <div>
         <Navbar fixedTop>
             <Navbar.Header>
                 <Navbar.Brand>
                     <Link to="/"><img src={LogoImg} style={menuLogo} alt="logo"/></Link>
+
                 </Navbar.Brand>
-                <Navbar.Toggle/>
+              {user === null ? '':
+                <span style={{color: '#065498', marginTop: '1em', fontSize: '1em'}}>{user.email}</span>
+              }
+                              <Navbar.Toggle/>
             </Navbar.Header>
             <Navbar.Collapse>
                 <Nav style={rightMenu}>
-                    <LinkContainer to="/messages">
-<Nav>
-                        <Button style={ButtonMenu} bsStyle="info">
-                            ms
-                        </Button>
-</Nav>
-                    </LinkContainer>
-                    <LinkContainer to="/calendar">
+                   <LinkContainer to="/calendar">
                         <Nav>
                         <Button style={ButtonMenu} bsStyle="info">
                        <FontAwesome name="calendar"/>
@@ -78,4 +77,8 @@ const MainMenu = () => (
     </div>
 )
 
-export default MainMenu
+export default withRouter(connect(
+  state => ({
+    user: state.auth.user
+  })
+)(MainMenu))

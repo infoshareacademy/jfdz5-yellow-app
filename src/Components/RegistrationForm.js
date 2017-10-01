@@ -14,7 +14,6 @@ const ButtonForm = {
 class RegistrationForm extends React.Component {
 
   state = {
-    username: '',
     email: '',
     password: ''
   }
@@ -27,7 +26,6 @@ class RegistrationForm extends React.Component {
     event.preventDefault()
 
     firebase.auth().createUserWithEmailAndPassword(
-      this.state.username,
       this.state.email,
       this.state.password
     )
@@ -41,14 +39,7 @@ class RegistrationForm extends React.Component {
         <div>
           <label htmlFor="email">imię</label>
           <br/>
-          <input
-            className="signup"
-            type="text"
-            id="username"
-            name="username"
-            onChange={this.handleChange}
-          />
-        </div>
+          </div>
         <div>
           <label htmlFor="email">email</label>
           <br/>

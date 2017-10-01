@@ -1,25 +1,28 @@
 import React from 'react'
+import moment from 'moment'
 // import { Link } from 'react-router-dom'
 // import FontAwesome from 'react-fontawesome'
 import './EventsGrid.css'
 import EventGridItem from './EventGridItem'
 
-class EventsGrid extends React.Component {
+const EventsGrid = props => {
 
-  render() {
 
-    const filteredData = this.props.events.filter(event => {
-      return new Date(event.data + ' ' + event.time) >= new Date();
-    })
-
-    const sortData = filteredData.sort((a, b) => {
-        return (new Date(a.data + ' ' + a.time)).getTime() > (new Date(b.data + ' ' + b.time)).getTime()
-      }
+    const events = props.events.map(
+      item => ({
+        ...item,
+        date: moment(item.data + ' ' + item.time)
+      })
+    ).filter(
+      event => event.date.isAfter(moment())
+    ).sort(
+      (a, b) => a.date.isBefore(b.date) ? -1 : (a.date.isAfter(b.date) ? 1 : 0)
     )
+
     return (
       <div className="eventsgrid">
         {
-          sortData.map(
+          events.map(
             event => (
               <EventGridItem key={event.id} event={event}/>
             )
@@ -28,6 +31,6 @@ class EventsGrid extends React.Component {
       </div>
     )
   }
-}
+
 
 export default EventsGrid

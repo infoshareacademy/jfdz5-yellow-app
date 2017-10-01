@@ -21,6 +21,9 @@ const Span = styled.span`
  color: #42B5D7;
  }`
 
+const EventId = {
+  display: 'none'
+}
 
 class EventListItem extends React.Component {
 
@@ -77,11 +80,12 @@ class EventListItem extends React.Component {
 
                         </Span>
                         &nbsp;|&nbsp;
-                        <span className="favs"><a href={event.link}><FontAwesome name="facebook"/>
-
-
-                        </a></span>
-                    </td>
+                        <span className="favs"
+                              onClick={() => {event.link}}
+                        ><FontAwesome name="facebook"/>
+</span>
+                      <span style={EventId}>{event.genre}</span>
+                    </td>o si
                 </tr>
             )
         }

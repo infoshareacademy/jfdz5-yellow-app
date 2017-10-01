@@ -2,48 +2,46 @@ import React from 'react'
 import { Table } from 'react-bootstrap'
 import './EventsList.css'
 import EventListItem from './EventListItem'
-
+import moment from 'moment'
 
 
 const EventsList = props => {
 
 
 
-    const filteredData = props.events.filter(event => {
-      return new Date(event.data + ' ' + event.time) >= new Date();
+  const events = props.events.map(
+    item => ({
+      ...item,
+      date: moment(item.data + ' ' + item.time)
     })
+  ).filter(
+    event => event.date.isAfter(moment())
+  ).sort(
+    (a, b) => a.date.isBefore(b.date) ? -1 : (a.date.isAfter(b.date) ? 1 : 0)
+  )
 
-    const sortData = filteredData.sort((a, b) => {
-        return (new Date(a.data + ' ' + a.time)).getTime() > (new Date(b.data + ' ' + b.time)).getTime()
-      }
-    )
-
-    return (
-      <Table className="eventslist">
-            <thead>
-            <tr>
-                <th>co</th>
-                <th>kiedy</th>
-                <th>gdzie</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {
-          sortData.map(
-            event => (
-              <EventListItem key={event.id} event={event}/>
-            )
+  return (
+    <Table className="eventslist">
+      <thead>
+      <tr>
+        <th>co</th>
+        <th>kiedy</th>
+        <th>gdzie</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      {
+        events.map(
+          event => (
+            <EventListItem key={event.id} event={event}/>
           )
-        }
-        </tbody>
-      </Table>
-    )
-  }
-
-
-
+        )
+      }
+      </tbody>
+    </Table>
+  )
+}
 
 
 export default EventsList

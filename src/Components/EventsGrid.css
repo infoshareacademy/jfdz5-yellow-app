@@ -31,11 +31,17 @@
 .eventsgrid_cell > h2 {
    font-size: 1.5em;
     font-weight: 800;
+    text-align: left;
 }
 
 .eventsgrid_cell > h3 {
     font-size: 1.2em;
     font-weight: 800;
+}
+
+.eventsgrid_cell > h4 {
+    font-size: 1em;
+    font-weight: 700;
 }
 
 .eventsgrid_cell .social {
