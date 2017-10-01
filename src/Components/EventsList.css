@@ -1,0 +1,29 @@
+.eventslist {
+    color: #065498;
+    font-size: 1em;
+    font-weight: bold;
+    }
+
+.eventslist.table > tbody > tr > td {
+    border-top: 1px solid #49b8da;
+    }
+
+.eventslist.table > thead > tr > th {
+    border-bottom: 6px double #49b8da;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.eventslist .favs {
+    padding: 0 0.2em 0 0.2em;
+    text-align: center;
+}
+
+@media screen and (max-width: 405px) {
+    .eventslist  {
+        font-size: 0.7em;
+    }
+}

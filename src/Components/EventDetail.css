@@ -1,0 +1,43 @@
+
+.eventdetail {
+    min-height: 100px;
+    flex: calc(80% / 3);
+    flex-basis: auto;
+    text-align: left;
+    border: 1px solid #49b8da;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 20px;
+    color: #065498;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.eventdetail > h1 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.eventdetail > h2 {
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.eventdetail > h3 {
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.eventdetail .social {
+    color: #065498;
+    font-size: 2em;
+    font-weight: 800;
+    float: right;
+    padding: 0;
+}
+
+.eventdetail hr {
+    border: 1px solid #49b8da;
+}

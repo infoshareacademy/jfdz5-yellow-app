@@ -1,0 +1,33 @@
+.footer {
+    padding: 0.8rem;
+    margin-top: 3%;
+    background: url("img/logo.png");
+    background-repeat: repeat-x;
+    border-bottom: 2px solid #ffd800;
+    width: 100%;
+    min-height: 3.5em;
+    }
+
+.footer h6 {
+    color: black;
+    font-size: 1em;
+    font-weight: 900;
+    text-align: right;
+}
+
+.footer .social {
+    padding: 0.8rem 10px 0.8rem 10px;
+    color: black;
+    font-size: 1em;
+    font-weight: 900;
+    text-align: left;
+    }
+
+@media screen and (max-width: 405px) {
+    .footer h6  {
+        font-size: 0.7em;
+    }
+    .social {
+        font-size: 0.7em;
+    }
+}

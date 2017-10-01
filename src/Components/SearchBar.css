@@ -1,0 +1,19 @@
+.searchbar {
+    margin-top: 2.1em;
+    letter-spacing: 0.3em;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #49b8da;
+    color: #49b8da;
+}
+
+.form-control:focus {
+    border-color: #49b8da;
+    box-shadow: 0px 1px 2px #49b8da;
+}
+
+@media screen and (max-width: 405px) {
+    .searchbar {
+        font-size: 0.6em;
+    }
+}
