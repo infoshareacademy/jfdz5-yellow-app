@@ -62,19 +62,22 @@ class EventGridItem extends React.Component {
 
                                                   active={!!this.props.favEvents[eventId]}
                                                   onClick={
-                                                      () => firebase.database().ref(
-                                                          '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
+                                                    () => {delete event.date
+                                                      firebase.database().ref(
+                                                        '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
                                                       ).set(this.props.favEvents[eventId] ? null : event)
-                                                  }
+                                                    }}
                                             >                            {this.props.favEvents[eventId] ?
-                                                <FontAwesome className="fa fa-heart"/> :
-                                                <FontAwesome className="fa fa-heart-o"/>
+                                              <FontAwesome name="heart"/> :
+                                              <FontAwesome name="heart-o"/>
                                             }
 
                         </Span>
                                     &nbsp;|&nbsp;
-                                            <a href={event.link}><FontAwesome className="fa fa-facebook"/></a>
-                                                    </div>
+                                          <Span className="favs">
+                                          { event.link ? <a href={event.link}><FontAwesome className="fa fa-facebook"/></a> : null }
+                                          </Span>
+                                        </div>
                         )
 
 }

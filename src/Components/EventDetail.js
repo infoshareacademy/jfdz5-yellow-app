@@ -33,18 +33,21 @@ const EventDetail = props => {
 
                           active={!!props.favEvents[eventId]}
                           onClick={
-                              () => firebase.database().ref(
-                                  '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
+                            () => {delete event.date
+                              firebase.database().ref(
+                                '/favorites/' + firebase.auth().currentUser.uid + '/' + eventId
                               ).set(props.favEvents[eventId] ? null : event)
-                          }
+                            }}
                     >                            {props.favEvents[eventId] ?
-                        <FontAwesome className="fa fa-heart"/> :
-                        <FontAwesome className="fa fa-heart-o"/>
+                      <FontAwesome name="heart"/> :
+                      <FontAwesome name="heart-o"/>
                     }
 
                         </Span>
                 &nbsp;|&nbsp;
-                <a href={event.link}><FontAwesome className="fa fa-facebook"/></a>
+              <Span className="favs">
+                                          { event.link ? <a href={event.link}><FontAwesome className="fa fa-facebook"/></a> : null }
+                                          </Span>
             </span>
                 <h1>{event.name}</h1>
                 <h2>{event.data}&nbsp;|&nbsp;{event.time}</h2>
